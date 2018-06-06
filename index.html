@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Slider Design</title>
+	
+	<style type="text/css">
+		#Container{width:960px; margin:30px auto;}
+		#Container .sliderItems img{width:100%; height:400px;}
+		.slider_container{position:relative;}
+		.slider_container .sliderItems{position:absolute; width:100%; opacity:0; transition:all 1s;}
+		.slider_container .sliderItems.active{opacity:1;}
+		
+		
+		
+		
+	
+	</style>
+	
+</head>
+<body>
+
+<div id="Container">
+
+	<div class="slider_container">
+		<div class="sliderItems active"> <img src="images/img01.jpg" /></div>
+		<div class="sliderItems"> <img src="images/img02.jpg" /></div>
+		<div class="sliderItems"> <img src="images/img03.jpg" /></div>
+		<div class="sliderItems"> <img src="images/img04.jpg" /></div>
+		<div class="sliderItems"> <img src="images/img05.jpg" /></div>
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+
+
+
+setInterval(function(){
+
+
+	if(document.getElementsByClassName("sliderItems")[0].classList.contains("active")){
+		
+		document.getElementsByClassName("sliderItems")[1].classList.add("active");
+		document.getElementsByClassName("sliderItems")[0].classList.remove("active");
+	}
+	else if(document.getElementsByClassName("sliderItems")[1].classList.contains("active")){
+		
+		document.getElementsByClassName("sliderItems")[2].classList.add("active");
+		document.getElementsByClassName("sliderItems")[1].classList.remove("active");
+	}
+	else if(document.getElementsByClassName("sliderItems")[2].classList.contains("active")){
+		
+		document.getElementsByClassName("sliderItems")[3].classList.add("active");
+		document.getElementsByClassName("sliderItems")[2].classList.remove("active");
+	}
+	else if(document.getElementsByClassName("sliderItems")[3].classList.contains("active")){
+		
+		document.getElementsByClassName("sliderItems")[0].classList.add("active");
+		document.getElementsByClassName("sliderItems")[3].classList.remove("active");
+	}
+
+},2000);
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
